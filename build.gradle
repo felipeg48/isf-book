@@ -1,0 +1,19 @@
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+
+    group = 'com.apress.isf4'
+    version = '1.0'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+	compile 'org.codehaus.groovy:groovy-all:2.2.0'
+	compile 'org.springframework:spring-context:4.0.0.RELEASE'
+    	testCompile 'junit:junit:4.11'
+    }
+}
