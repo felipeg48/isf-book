@@ -16,4 +16,10 @@ allprojects {
 	compile 'org.springframework:spring-context:4.0.0.RELEASE'
     	testCompile 'junit:junit:4.11'
     }
+	
+	test {
+		testLogging {
+			events 'started', 'passed'
+		}
+	}
 }
