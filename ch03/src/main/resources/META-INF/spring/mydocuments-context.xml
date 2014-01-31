@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="engine" class="com.apress.isf.spring.service.ServiceSearchEngine" />
+  
+  <bean id="webType" class="com.apress.isf.java.model.Type">
+    <property name="name" value="WEB" />  
+    <property name="desc" value="Web Link" /> 
+    <property name="extension" value=".url" />        
+  </bean>
+  <bean id="pdfType" class="com.apress.isf.java.model.Type">
+    <property name="name" value="PDF" />  
+    <property name="desc" value="Portable Document Format" /> 
+    <property name="extension" value=".pdf" />        
+  </bean>
+  
+  <bean id="noteType" class="com.apress.isf.java.model.Type">
+    <property name="name" value="NOTE" />  
+    <property name="desc" value="Text Notes" /> 
+    <property name="extension" value=".txt" />        
+  </bean>
+
+  <bean id="wordType" class="com.apress.isf.java.model.Type">
+    <property name="name" value="WORD" />  
+    <property name="desc" value="Microsoft Word" /> 
+    <property name="extension" value=".doc?" />        
+  </bean>
+  
+  <bean id="excelType" class="com.apress.isf.java.model.Type">
+    <property name="name" value="EXCEL" />  
+    <property name="desc" value="Microsoft Excel" /> 
+    <property name="extension" value=".xls?" />        
+  </bean>
+  
+  <bean id="powerPointType" class="com.apress.isf.java.model.Type">
+    <property name="name" value="POWERPOINT" />  
+    <property name="desc" value="Microsoft PowerPoint" /> 
+    <property name="extension" value=".ppt?" />        
+  </bean>
+</beans>
