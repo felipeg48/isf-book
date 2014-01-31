@@ -1,33 +1,41 @@
 /**
  * 
  */
-package com.apress.isf.java.test;
+package com.apress.isf.spring.test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.apress.isf.java.model.Document;
 import com.apress.isf.java.model.Type;
-import com.apress.isf.java.service.MySearchEngine;
 import com.apress.isf.java.service.SearchEngine;
 
 /**
  * @author Felipe Gutierrez
  *
  */
-public class MyDocumentsTest {
+public class MyDocumentsWithSpringTest {
 	
-	private SearchEngine engine = new MySearchEngine();
+	private ClassPathXmlApplicationContext context;
+	private SearchEngine engine;
+	private Type documentType;
 
+	@Before
+	public void setup(){
+		context = new ClassPathXmlApplicationContext("META-INF/spring/mydocuments-context.xml");
+		engine = context.getBean(SearchEngine.class);
+		documentType = context.getBean(Type.class);
+	}
+	
 	@Test
-	public void testFindByType() {
-		Type documentType = new Type();
-		documentType.setName("WEB");
-		documentType.setDesc("Web Link");
-		documentType.setExtension(".url");
-		
+	public void testWithSpringFindByType() {	
 		List<Document> documents = engine.findByType(documentType);
 		assertNotNull(documents);
 		assertTrue(documents.size() == 1);
@@ -35,12 +43,11 @@ public class MyDocumentsTest {
 		assertEquals(documentType.getDesc(),documents.get(0).getType().getDesc());
 		assertEquals(documentType.getExtension(),documents.get(0).getType().getExtension());
 	}
-	
+
 	@Test
-	public void testListAll() {		
+	public void testWithSpringListAll() {		
 		List<Document> documents = engine.listAll();
 		assertNotNull(documents);
 		assertTrue(documents.size() == 4);
 	}
-
 }
