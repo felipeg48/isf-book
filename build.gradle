@@ -3,17 +3,24 @@ allprojects {
     apply plugin: 'groovy'
     apply plugin: 'eclipse'
     apply plugin: 'idea'
+	apply plugin: 'application'
+	
+	//mainClassName = System.getProperty("mainClass")
 
     group = 'com.apress.isf'
     version = '1.0'
 
     repositories {
         mavenCentral()
+		maven {
+			url 'http://repo.spring.io/milestone'
+		}
     }
 
     dependencies {
-	compile 'org.codehaus.groovy:groovy-all:2.2.0'
-	compile 'org.springframework:spring-context:4.0.0.RELEASE'
+		compile 'org.codehaus.groovy:groovy-all:2.2.0'
+		compile 'org.springframework:spring-context:4.0.0.RELEASE'
+		compile 'org.springframework.boot:spring-boot-starter-web:1.0.0.RC1'
     	testCompile 'junit:junit:4.11'
     }
 	
