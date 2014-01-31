@@ -1,0 +1,5 @@
+ch*/.project
+ch*/.settings/*
+ch*/.classpath
+ch*/.springBeans
+ch*/bin/*
