@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.apress.isf.java.test;
+package com.apress.isf.java.service;
 
 import java.util.ArrayList;
 import java.util.List;

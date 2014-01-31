@@ -4,7 +4,7 @@ allprojects {
     apply plugin: 'eclipse'
     apply plugin: 'idea'
 
-    group = 'com.apress.isf4'
+    group = 'com.apress.isf'
     version = '1.0'
 
     repositories {
