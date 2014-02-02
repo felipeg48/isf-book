@@ -30,13 +30,13 @@ public class MyDocumentsBeanDefinitionReaderTest {
 	
 	@Before
 	public void setup(){
-		context = new GenericGroovyApplicationContext("classpath:META-INF/spring/mydocuments.groovy");
+		context = new GenericGroovyApplicationContext("META-INF/spring/mydocuments.groovy");
 		engine = context.getBean(SearchEngine.class);
-		webType = context.getBean(Type.class);
+		webType = context.getBean("webType",Type.class);
 	}
 	
 	@Test
-	public void testWithSpringFindByType() {	
+	public void testWithGroovyFindByType() {	
 		List<Document> documents = engine.findByType(webType);
 		assertNotNull(documents);
 		assertTrue(documents.size() == 1);
@@ -46,7 +46,7 @@ public class MyDocumentsBeanDefinitionReaderTest {
 	}
 
 	@Test
-	public void testWithSpringListAll() {		
+	public void testWithGroovyListAll() {		
 		List<Document> documents = engine.listAll();
 		assertNotNull(documents);
 		assertTrue(documents.size() == 4);

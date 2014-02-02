@@ -37,7 +37,7 @@ public class MyDocumentsBeanConfigurationTest {
 	}
 	
 	@Test
-	public void testWithSpringFindByType() {	
+	public void testWithBeanConfigurationFindByType() {	
 		List<Document> documents = engine.findByType(webType);
 		assertNotNull(documents);
 		assertTrue(documents.size() == 1);
@@ -47,7 +47,7 @@ public class MyDocumentsBeanConfigurationTest {
 	}
 
 	@Test
-	public void testWithSpringListAll() {		
+	public void testWithBeanConfigurationListAll() {		
 		List<Document> documents = engine.listAll();
 		assertNotNull(documents);
 		assertTrue(documents.size() == 4);
