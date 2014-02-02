@@ -36,7 +36,7 @@ public class MyDocumentsAnnotatedTest {
 	}
 	
 	@Test
-	public void testWithSpringFindByType() {	
+	public void testWithAnnotationsFindByType() {	
 		List<Document> documents = engine.findByType(webType);
 		assertNotNull(documents);
 		assertTrue(documents.size() == 1);
@@ -46,7 +46,7 @@ public class MyDocumentsAnnotatedTest {
 	}
 
 	@Test
-	public void testWithSpringListAll() {		
+	public void testWithAnnotationsListAll() {		
 		List<Document> documents = engine.listAll();
 		assertNotNull(documents);
 		assertTrue(documents.size() == 4);

@@ -30,7 +30,7 @@ beans {
 	
 	doc3(Document){
 		name = "Clustering with RabbitMQ"
-		type = ref("txtType")
+		type = ref("noteType")
 		location = "/Users/felipeg/Documents/Random/Clustering with RabbitMQ.txt"
 	}
 	
