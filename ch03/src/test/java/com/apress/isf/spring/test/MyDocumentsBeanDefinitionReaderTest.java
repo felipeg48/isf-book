@@ -30,7 +30,7 @@ public class MyDocumentsBeanDefinitionReaderTest {
 	
 	@Before
 	public void setup(){
-		context = new GenericGroovyApplicationContext("com/apress/isf/spring/config/mydocuments.groovy");	
+		context = new GenericGroovyApplicationContext("classpath:META-INF/spring/mydocuments.groovy");
 		engine = context.getBean(SearchEngine.class);
 		webType = context.getBean(Type.class);
 	}
