@@ -3,8 +3,6 @@
  */
 package com.apress.isf.spring.data;
 
-import org.springframework.stereotype.Repository;
-
 import com.apress.isf.java.model.Type;
 
 
@@ -12,7 +10,6 @@ import com.apress.isf.java.model.Type;
  * @author Felipe Gutierrez
  *
  */
-@Repository
 public class TypeDataRepository implements TypeDataDAO{
 
 	private Type pdfType;
