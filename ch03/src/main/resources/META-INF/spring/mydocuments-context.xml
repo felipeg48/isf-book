@@ -10,6 +10,7 @@
     <property name="desc" value="Web Link" /> 
     <property name="extension" value=".url" />        
   </bean>
+  
   <bean id="pdfType" class="com.apress.isf.java.model.Type">
     <property name="name" value="PDF" />  
     <property name="desc" value="Portable Document Format" /> 
@@ -39,4 +40,5 @@
     <property name="desc" value="Microsoft PowerPoint" /> 
     <property name="extension" value=".ppt?" />        
   </bean>
+  
 </beans>
