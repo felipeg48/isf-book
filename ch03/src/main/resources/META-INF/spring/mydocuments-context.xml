@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
   <bean id="engine" class="com.apress.isf.spring.service.ServiceSearchEngine">
-      <property name="documentDAO" ref="documentDAO"
+      <property name="documentDAO" ref="documentDAO"/>
   </bean>
     
   <bean id="documentDAO" class="com.apress.isf.spring.data.DocumentRepository">
