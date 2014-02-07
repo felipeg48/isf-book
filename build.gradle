@@ -21,12 +21,19 @@ allprojects {
 		compile 'org.codehaus.groovy:groovy-all:2.2.0'
 		compile 'org.springframework:spring-context:4.0.1.RELEASE'
 		compile 'org.springframework.boot:spring-boot-starter-web:1.0.0.RC1'
-    	testCompile 'junit:junit:4.11'
+     	testCompile 'junit:junit:4.11'
     }
 	
 	test {
+		
 		testLogging {
+			showStandardStreams = true
 			events 'started', 'passed'
 		}
+
+		onOutput { descriptor, event ->
+			logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message )
+		  }
+		
 	}
 }
