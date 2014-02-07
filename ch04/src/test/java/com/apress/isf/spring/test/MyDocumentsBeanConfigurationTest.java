@@ -35,7 +35,7 @@ public class MyDocumentsBeanConfigurationTest {
 	}
 	
 	@Test
-	public void testWithBeanConfigurationFindByType() {	
+	public void testWithBeanConfigurationAll() {	
 		engine = context.getBean(SearchEngine.class);
 		webType = context.getBean(Type.class);
 		
