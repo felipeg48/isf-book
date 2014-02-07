@@ -26,6 +26,18 @@ public class MyDocumentsContext {
 	private Map<String,Document> documents = new HashMap<String,Document>();
 	private Map<String,Type> types = new HashMap<String,Type>();
 
+	@Bean
+	public Type webType(){		
+		return getTypeFromMap("web");
+	}
+	
+	@Bean
+	public SearchEngine engine(){
+		ServiceSearchEngine engine = new ServiceSearchEngine();
+		engine.setDocumentDAO(documentDAO());
+		return engine;
+	}
+	
 	public MyDocumentsContext(){
 		Type type = new Type();
 		type.setName("PDF");
@@ -73,18 +85,6 @@ public class MyDocumentsContext {
 		
 		documents.put("doc4",document);
 		types.put("web",type);
-	}
-	
-	@Bean
-	public Type webType(){		
-		return getTypeFromMap("web");
-	}
-	
-	@Bean
-	public SearchEngine engine(){
-		ServiceSearchEngine engine = new ServiceSearchEngine();
-		engine.setDocumentDAO(documentDAO());
-		return engine;
 	}
 	
 	private DocumentDAO documentDAO(){

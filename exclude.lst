@@ -3,3 +3,4 @@ ch*/.settings/*
 ch*/.classpath
 ch*/.springBeans
 ch*/bin/*
+ch*/build/*
