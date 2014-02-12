@@ -17,7 +17,7 @@ import com.apress.isf.java.model.Type;
 import com.apress.isf.java.service.SearchEngine;
 import com.apress.isf.spring.data.DocumentDAO;
 import com.apress.isf.spring.data.DocumentRepository;
-import com.apress.isf.spring.service.ServiceSearchEngine;
+import com.apress.isf.spring.service.SearchEngineService;
 
 /**
  * @author Felipe Gutierrez
@@ -38,7 +38,7 @@ public class MyDocumentsContext {
 	@Bean
 	@Scope("prototype")
 	public SearchEngine engine(){
-		ServiceSearchEngine engine = new ServiceSearchEngine();
+		SearchEngineService engine = new SearchEngineService();
 		engine.setDocumentDAO(documentDAO());
 		
 		if(log.isDebugEnabled())

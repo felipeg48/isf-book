@@ -1,11 +1,11 @@
 
-import com.apress.isf.spring.service.ServiceSearchEngine
+import com.apress.isf.spring.service.SearchEngineService
 import com.apress.isf.spring.data.DocumentRepository
 import com.apress.isf.java.model.Document
 
 beans {
 	
-	engine(ServiceSearchEngine){
+	engine(SearchEngineService){
 		documentDAO = ref("documentDAO")
 	}	
 	
