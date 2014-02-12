@@ -1,21 +1,21 @@
 
 import com.apress.isf.spring.service.SearchEngineService
 import com.apress.isf.spring.data.DocumentRepository
+import com.apress.isf.spring.data.TypeDataRepository
 import com.apress.isf.java.model.Document
 
 beans {
 	
-	engine(SearchEngineService){ bean ->
-		bean.scope = "prototype"
+	engine(SearchEngineService){ 
 		documentDAO = ref("documentDAO")
 	}	
 	
-	documentDAO(DocumentRepository){ bean->
-		bean.scope = "prototype"
-		doc1 = ref("doc1")
-		doc2 = ref("doc2")
-		doc3 = ref("doc3")
-		doc4 = ref("doc4")
+	documentDAO(DocumentRepository){ 
+		documents = [ref("doc1"), ref("doc2"), ref("doc3"), ref("doc4")]
+	}
+	
+	typeDAO(TypeDataRepository){
+		types = [pdfType:ref("pdfType"), webType:ref("webType"), noteType: ref("noteType") ]
 	}
 	
 	doc1(Document){

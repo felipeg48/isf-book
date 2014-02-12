@@ -19,12 +19,12 @@ import com.apress.isf.spring.data.DocumentDAO;
  * @author Felipe Gutierrez
  *
  */
-public class ServiceSearchEngine implements SearchEngine {
-	private static final Logger log = LoggerFactory.getLogger(ServiceSearchEngine.class);
+public class SearchEngineService implements SearchEngine {
+	private static final Logger log = LoggerFactory.getLogger(SearchEngineService.class);
 	private DocumentDAO documentDAO;
 
 	
-	public ServiceSearchEngine(){
+	public SearchEngineService(){
 		if(log.isDebugEnabled())
 			log.debug("ServiceSearchEngine created: " + this);
 	}
