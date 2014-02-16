@@ -26,7 +26,7 @@ public class SearchEngineService implements SearchEngine {
 	
 	public SearchEngineService(){
 		if(log.isDebugEnabled())
-			log.debug("ServiceSearchEngine created: " + this);
+			log.debug("SearchEngineService created: " + this);
 	}
 	
 	public DocumentDAO getDocumentDAO() {
