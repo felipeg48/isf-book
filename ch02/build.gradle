@@ -13,7 +13,7 @@ repositories {
 
 dependencies {
 	compile 'org.codehaus.groovy:groovy-all:2.2.0'
-	compile 'org.springframework:spring-context:4.0.0.RELEASE'
+	compile 'org.springframework:spring-context:4.0.1.RELEASE'
 	testCompile 'junit:junit:4.11'
 }
 
