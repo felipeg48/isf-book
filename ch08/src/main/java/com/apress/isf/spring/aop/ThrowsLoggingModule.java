@@ -23,6 +23,7 @@ public class ThrowsLoggingModule implements ThrowsAdvice {
 				log.debug("@@@@(THROWS) No arguments passed.");
 			for(Object arg:args)
 				log.debug("@@@@(THROWS) Argument passed:" + arg);
+			log.debug("@@@(THORWS) Error: " + ex.getMessage());
 		}
 	}
 }

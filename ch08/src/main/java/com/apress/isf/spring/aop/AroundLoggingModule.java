@@ -19,6 +19,8 @@ public class AroundLoggingModule implements MethodInterceptor {
 		Object result = null;
 		if(log.isDebugEnabled()){
 			log.debug("@@@@(AROUND-BEFORE) Method called: " + invocation.getMethod().getName());
+			if(invocation.getArguments().length ==0 )
+				log.debug("@@@@(AROUND-BEFORE) No arguments passed.");
 			for(Object arg:invocation.getArguments())
 				log.debug("@@@@(AROUND-BEFORE) Argument passed:" + arg);
 		}
