@@ -36,4 +36,16 @@ public class Document {
 	public void setLocation(String location) {
 		this.location = location;
 	}
+	
+	public String toString(){
+		StringBuilder builder = new StringBuilder("Documents(");
+		builder.append("name: ");
+		builder.append(name);
+		builder.append(", type: ");
+		builder.append(type);
+		builder.append(", location: ");
+		builder.append(location);
+		builder.append(")");
+		return builder.toString();
+	}
 }

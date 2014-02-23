@@ -38,13 +38,14 @@ public class Type {
 	}
 	
 	public String toString(){
-		StringBuilder builder = new StringBuilder("Type Definition:");
-		builder.append("\nName: ");
+		StringBuilder builder = new StringBuilder("Type(");
+		builder.append("name: ");
 		builder.append(name);
-		builder.append("\nDescription: ");
+		builder.append(", description: ");
 		builder.append(desc);
-		builder.append("\nExtension: ");
+		builder.append(", extension: ");
 		builder.append(extension);
+		builder.append(")");
 		return builder.toString();
 	}
 }
