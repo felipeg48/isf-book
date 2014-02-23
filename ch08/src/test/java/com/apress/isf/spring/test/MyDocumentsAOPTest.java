@@ -36,7 +36,7 @@ public class MyDocumentsAOPTest {
 	private Type webType;
 	
 	@Test
-	public void testUsingSpringTest() {	
+	public void testUsingSpringAOP() {	
 		log.debug("Using Spring AOP:");
 				
 		List<Document> documents = engineProxy.findByType(webType);
@@ -55,5 +55,24 @@ public class MyDocumentsAOPTest {
 		}catch(Exception ex){
 			log.error(ex.getMessage());
 		}
+	}
+	
+	@Test
+	public void testUsingSpringAOPCaching() {	
+		log.debug("Testing Caching Module...");
+		
+		List<Document> documents = engineProxy.findByType(webType);
+		assertNotNull(documents);
+		int count = documents.size();
+		
+		log.debug("It should be now cached!");
+		documents = engineProxy.findByType(webType);
+		assertNotNull(documents);
+		assertEquals(count, documents.size());
+		
+		log.debug("It should be now cached!");
+		documents = engineProxy.findByType(webType);
+		assertNotNull(documents);
+		assertEquals(count, documents.size());
 	}
 }
