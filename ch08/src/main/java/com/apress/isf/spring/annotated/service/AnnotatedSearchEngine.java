@@ -43,4 +43,8 @@ public class AnnotatedSearchEngine implements SearchEngine {
 		List<Document> result = Arrays.asList(documentDAO.getAll());
 		return result;
 	}
+	
+	public List<Document> findByLocation(String location) {
+		throw new UnsupportedOperationException("findByLocation not yet implemented.");
+	}
 }
