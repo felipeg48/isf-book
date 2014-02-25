@@ -1,4 +1,4 @@
-/* Uncomment if this project CH03 need to be compile alone
+/* Uncomment if this project CH08 need to be compile alone
  apply plugin: 'java'
  apply plugin: 'groovy'
  apply plugin: 'eclipse'
