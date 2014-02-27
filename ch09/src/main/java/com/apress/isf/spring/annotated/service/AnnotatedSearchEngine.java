@@ -4,11 +4,9 @@
 package com.apress.isf.spring.annotated.service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.apress.isf.java.model.Document;
@@ -21,7 +19,6 @@ import com.apress.isf.spring.data.DocumentDAO;
  *
  */
 @Service("engine")
-@Scope
 public class AnnotatedSearchEngine implements SearchEngine {
 	
 	@Autowired
@@ -40,7 +37,7 @@ public class AnnotatedSearchEngine implements SearchEngine {
 	}
 	
 	public List<Document> listAll() {
-		List<Document> result = Arrays.asList(documentDAO.getAll());
+		List<Document> result = documentDAO.getAll();
 		return result;
 	}
 	
