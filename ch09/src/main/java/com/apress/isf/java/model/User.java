@@ -11,11 +11,20 @@ import java.util.List;
  *
  */
 public class User {
+	private String userId;
 	private String email;
 	private String password;
 	private String name;
 	List<Document> documents = new ArrayList<Document>();
 	
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
 	public String getEmail() {
 		return email;
 	}

@@ -3,6 +3,8 @@
  */
 package com.apress.isf.spring.data;
 
+import java.util.List;
+
 import com.apress.isf.java.model.Document;
 
 /**
@@ -10,5 +12,5 @@ import com.apress.isf.java.model.Document;
  *
  */
 public interface DocumentDAO {
-	public Document[] getAll();
+	public List<Document> getAll();
 }

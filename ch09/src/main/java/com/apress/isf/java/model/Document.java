@@ -10,7 +10,7 @@ import java.util.Date;
  *
  */
 public class Document {
-	
+	private String documentId;
 	private String name;
 	private Type type;
 	private String location;
@@ -18,6 +18,14 @@ public class Document {
 	private Date created;
 	private Date modified;
 	
+	public String getDocumentId() {
+		return documentId;
+	}
+
+	public void setDocumentId(String documentId) {
+		this.documentId = documentId;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -68,6 +76,8 @@ public class Document {
 
 	public String toString(){
 		StringBuilder builder = new StringBuilder("Documents(");
+		builder.append("id: ");
+		builder.append(documentId);
 		builder.append("name: ");
 		builder.append(name);
 		builder.append(", type: ");
