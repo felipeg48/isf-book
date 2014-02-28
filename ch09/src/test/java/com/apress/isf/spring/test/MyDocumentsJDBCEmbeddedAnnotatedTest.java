@@ -32,7 +32,7 @@ public class MyDocumentsJDBCEmbeddedAnnotatedTest {
 	private Type webType = new Type("WEB",".url");
 	
 	@Test
-	public void testWithAnnotationsAll() {	
+	public void testJDBCEmbedded() {	
 		
 		List<Document> documents = engine.findByType(webType);
 		assertNotNull(documents);
