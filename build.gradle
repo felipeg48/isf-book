@@ -11,6 +11,7 @@ allprojects {
     version = '1.0'
 
     repositories {
+		jcenter()
         mavenCentral()
 		maven {
 			url 'http://repo.spring.io/milestone'
@@ -20,16 +21,16 @@ allprojects {
     dependencies {
 		compile 'org.codehaus.groovy:groovy-all:2.2.0'
 		compile 'org.aspectj:aspectjrt:1.7.4'
-		compile 'org.springframework:spring-context:4.0.1.RELEASE'
-		compile 'org.springframework:spring-jdbc:4.0.1.RELEASE'
-		compile 'org.springframework.boot:spring-boot-starter-web:1.0.0.RC1'
+		compile 'org.springframework:spring-context:4.0.2.RELEASE'
+		compile 'org.springframework:spring-jdbc:4.0.2.RELEASE'
+		compile 'org.springframework.boot:spring-boot-starter-web:1.0.0.RC3'
 		
 		runtime 'cglib:cglib:3.1'
 		runtime 'org.aspectj:aspectjweaver:1.7.4'
 		runtime 'hsqldb:hsqldb:1.8.0.10'
 				    
      	testCompile 'junit:junit:4.11'
-		testCompile 'org.springframework:spring-test:4.0.1.RELEASE'
+		testCompile 'org.springframework:spring-test:4.0.2.RELEASE'
     }
 	
 	test {
@@ -43,5 +44,15 @@ allprojects {
 			logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message )
 		  }
 		
+	}
+}
+
+project(':ch10'){
+	apply plugin: 'war'
+	apply plugin: 'jetty'
+	
+	dependencies {
+		compile 'org.springframework:spring-webmvc:4.0.2.RELEASE'
+		runtime 'jstl:jstl:1.2'
 	}
 }
