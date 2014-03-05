@@ -19,16 +19,14 @@ import com.apress.isf.java.model.Document;
  */
 @Repository("documentDAO")
 public class DocumentRepository implements DocumentDAO {
-
-	private JdbcTemplate jdbcTemplate;
+	
 	@Autowired
 	private DataSource dataSource;
 	@Autowired
 	private String query;
 	
-	public List<Document> getAll() {
-		this.jdbcTemplate = new JdbcTemplate(this.dataSource);
-		return jdbcTemplate.query(query, new DocumentRowMapper());
+	public List<Document> getAll() {		
+		return new JdbcTemplate(this.dataSource).query(query, new DocumentRowMapper());
 	}
 
 }
