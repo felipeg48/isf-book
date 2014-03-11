@@ -56,3 +56,15 @@ project(':ch10'){
 		runtime 'jstl:jstl:1.2'
 	}
 }
+
+project(':ch11'){
+	
+	dependencies {
+		compile 'org.springframework:spring-jms:4.0.2.RELEASE'
+		compile 'org.springframework.amqp:spring-rabbit:1.2.1.RELEASE'
+		compile 'javax.jms:jms-api:1.1-rev-1'
+		compile 'com.thoughtworks.xstream:xstream:1.4.7'
+       
+		runtime 'org.apache.activemq:activemq-core:5.7.0'
+  	}
+}
