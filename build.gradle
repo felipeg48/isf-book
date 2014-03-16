@@ -58,13 +58,45 @@ project(':ch10'){
 }
 
 project(':ch11'){
+	apply plugin: 'war'
+	apply plugin: 'jetty'
 	
 	dependencies {
 		compile 'org.springframework:spring-jms:4.0.2.RELEASE'
 		compile 'org.springframework.amqp:spring-rabbit:1.2.1.RELEASE'
 		compile 'javax.jms:jms-api:1.1-rev-1'
 		compile 'com.thoughtworks.xstream:xstream:1.4.7'
-       
+		compile 'org.springframework:spring-webmvc:4.0.2.RELEASE'
+		runtime 'jstl:jstl:1.2'
 		runtime 'org.apache.activemq:activemq-core:5.7.0'
   	}
+}
+
+project(':ch12'){
+	apply plugin: 'war'
+	apply plugin: 'jetty'
+	
+	dependencies {
+		compile 'org.springframework:spring-jms:4.0.2.RELEASE'
+		compile 'org.springframework.amqp:spring-rabbit:1.2.1.RELEASE'
+		compile 'javax.jms:jms-api:1.1-rev-1'
+		compile 'com.thoughtworks.xstream:xstream:1.4.7'
+	
+		runtime 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
+      	runtime 'org.apache.activemq:activemq-core:5.7.0'
+	  }
+}
+
+project(':ch13'){
+	apply plugin: 'war'
+	apply plugin: 'jetty'
+	
+	dependencies {
+		compile 'org.springframework:spring-jms:4.0.2.RELEASE'
+		compile 'org.springframework.amqp:spring-rabbit:1.2.1.RELEASE'
+		compile 'javax.jms:jms-api:1.1-rev-1'
+		compile 'com.thoughtworks.xstream:xstream:1.4.7'
+	   
+		runtime 'org.apache.activemq:activemq-core:5.7.0'
+	  }
 }
