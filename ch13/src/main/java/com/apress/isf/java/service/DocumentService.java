@@ -13,14 +13,10 @@ import com.apress.isf.java.model.Type;
  *
  */
 public interface DocumentService {
-	public void createNewType(Type type);
-	public void updateType(Type type);
-	public void removeTypeById(String id);
-	public List<Type> getAllDefinedTypes();
-	public Type getTypeById(String id);
-	
-	public void createNewDocument(Document document);
-	public void removeDocumentById(String id);
-	public void updateDocument(Document document);
-	public void updateLocationFromDocumentId(String documentId, String location);
+	public List<Document> getAllDocuments();
+	public Document findDocumentById(String id);
+	public Document saveDocument(String id, Document document);
+	public Document removeDocumentById(String id);
+	public List<Document> findByType(Type type);
+	public boolean updateLocationFromDocumentId(String documentId, String location);
 }
