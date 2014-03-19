@@ -11,6 +11,83 @@
 
 	<context:component-scan base-package="com.apress.isf.spring" />
   
+  <lang:groovy id="groovyloginScript" script-source="classpath:META-INF/scripts/groovylogin.groovy">
+      <lang:property name="username" value="john@email.com"/>
+      <lang:property name="password" value="doe"/>
+  </lang:groovy>
+  
+  <lang:groovy id="groovyloginInline">
+      <lang:inline-script>
+        import com.apress.isf.java.service.Login
+
+        class GroovyLoginService implements Login {
+				  
+				  String username
+				  String password
+				  
+				  boolean isAuthorized(String email, String pass) {
+				    if(username==email &amp;&amp; password==pass)
+				      return true
+				    return false
+				  }
+				  
+				}
+      </lang:inline-script>
+      <lang:property name="username" value="john@email.com"/>
+      <lang:property name="password" value="doe"/>
+  </lang:groovy>
+  
+  <lang:jruby id="jrubyloginInline" script-interfaces="com.apress.isf.java.service.Login">
+    <lang:inline-script>
+      class GroovyLoginService
+          
+          def setUsername(email)
+            @username = email
+          end
+          def setPassword(pass)
+            @password = pass
+          end
+          
+          def isAuthorized(email,pass)
+            if @username == email and @password == pass
+              return true
+            else
+              return false
+            end
+          end
+      end
+    </lang:inline-script>
+    <lang:property name="username" value="john@email.com"/>
+    <lang:property name="password" value="doe"/>
+  </lang:jruby>
+  
+  <lang:bsh id="bshloginInline" script-interfaces="com.apress.isf.java.service.Login">
+      <lang:inline-script>
+          String username;
+          String password;
+          
+          void setUsername(String _username){
+              username = _username;
+          }
+          
+          void setPassword(String _password){
+              password = _password;
+          }
+          
+          boolean isAuthorized(String email,String pass){
+            if(username.equals(email) &amp;&amp; password.equals(pass))
+              return true;
+            return false;          
+          }
+      </lang:inline-script>
+      <lang:property name="username" value="john@email.com"/>
+      <lang:property name="password" value="doe"/>
+  </lang:bsh>
+  
+  
+  <bean id="security" class="com.apress.isf.spring.service.SecurityServiceFacade">
+    <property name="login" ref="bshloginInline"/>
+  </bean>
   
 	<!-- JDBC -->
 	<jdbc:embedded-database id="dataSource">
