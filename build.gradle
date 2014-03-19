@@ -20,6 +20,7 @@ allprojects {
 
     dependencies {
 		compile 'org.codehaus.groovy:groovy-all:2.2.0'
+		compile 'com.thoughtworks.xstream:xstream:1.4.7'
 		compile 'org.aspectj:aspectjrt:1.7.4'
 		compile 'org.springframework:spring-context:4.0.2.RELEASE'
 		compile 'org.springframework:spring-context-support:4.0.2.RELEASE'
@@ -66,7 +67,6 @@ project(':ch11'){
 		compile 'org.springframework:spring-jms:4.0.2.RELEASE'
 		compile 'org.springframework.amqp:spring-rabbit:1.2.1.RELEASE'
 		compile 'javax.jms:jms-api:1.1-rev-1'
-		compile 'com.thoughtworks.xstream:xstream:1.4.7'
 		compile 'org.springframework:spring-webmvc:4.0.2.RELEASE'
 		runtime 'jstl:jstl:1.2'
 		runtime 'org.apache.activemq:activemq-core:5.7.0'
@@ -81,8 +81,7 @@ project(':ch12'){
 		compile 'org.springframework:spring-jms:4.0.2.RELEASE'
 		compile 'org.springframework.amqp:spring-rabbit:1.2.1.RELEASE'
 		compile 'javax.jms:jms-api:1.1-rev-1'
-		compile 'com.thoughtworks.xstream:xstream:1.4.7'
-	
+		
 		runtime 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
       	runtime 'org.apache.activemq:activemq-core:5.7.0'
 	  }
@@ -91,7 +90,15 @@ project(':ch12'){
 project(':ch13'){
 	
 	dependencies {
-		compile 'com.thoughtworks.xstream:xstream:1.4.7'
 		runtime 'javax.mail:mail:1.4'
+	  }
+}
+
+project(':ch14'){
+	
+	dependencies {
+		runtime 'javax.mail:mail:1.4'
+		runtime 'org.jruby:jruby-complete:1.7.11'
+		runtime 'org.beanshell:bsh:2.0b5'
 	  }
 }
