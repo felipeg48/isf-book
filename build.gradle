@@ -102,3 +102,10 @@ project(':ch14'){
 		runtime 'org.beanshell:bsh:2.0b5'
 	  }
 }
+
+project(':ch15'){
+	dependencies {
+		compile 'org.springframework.data:spring-data-mongodb:1.4.0.RELEASE'
+            
+	}
+}
