@@ -11,7 +11,9 @@
 
 	<context:component-scan base-package="com.apress.isf.spring" />
   
-  <lang:groovy id="groovyloginScript" script-source="classpath:META-INF/scripts/groovylogin.groovy">
+  <lang:groovy id="groovyloginScript" 
+        refresh-check-delay="5000"
+        script-source="classpath:META-INF/scripts/groovylogin.groovy">
       <lang:property name="username" value="john@email.com"/>
       <lang:property name="password" value="doe"/>
   </lang:groovy>
