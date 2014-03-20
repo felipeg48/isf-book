@@ -3,24 +3,35 @@
  */
 package com.apress.isf.java.model;
 
+import org.springframework.data.annotation.Id;
+
 /**
  * @author Felipe Gutierrez
  *
  */
+@org.springframework.data.mongodb.core.mapping.Document(collection="mydocuments")
 public class Type {
 	
+	@Id
 	private String typeId;
 	private String name;	
 	private String desc;
 	private String extension;
 	
 	public Type(){
-		
+		this.typeId = java.util.UUID.randomUUID().toString();
 	}
 	
 	public Type(String name,String extension){
+		this.typeId = java.util.UUID.randomUUID().toString();
 		this.name = name;
 		this.extension = extension;
+	}
+	
+	public Type(String name,String extension, String description){
+		this.typeId = java.util.UUID.randomUUID().toString();
+		this.name = name;
+		this.desc = description;
 	}
 
 	public String getTypeId() {

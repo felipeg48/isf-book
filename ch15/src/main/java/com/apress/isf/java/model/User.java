@@ -6,16 +6,34 @@ package com.apress.isf.java.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+
 /**
  * @author Felipe Gutierrez
  *
  */
+@org.springframework.data.mongodb.core.mapping.Document(collection="mydocuments")
 public class User {
+	@Id
 	private String userId;
 	private String email;
 	private String password;
 	private String name;
+	
+	@DBRef
 	List<Document> documents = new ArrayList<Document>();
+	
+	public User(){
+		this.userId = java.util.UUID.randomUUID().toString();
+	}
+	
+	public User(String name,String email, String password){
+		this.userId = java.util.UUID.randomUUID().toString();
+		this.name = name;
+		this.email = email;
+		this.password = password;
+	}
 	
 	public String getUserId() {
 		return userId;

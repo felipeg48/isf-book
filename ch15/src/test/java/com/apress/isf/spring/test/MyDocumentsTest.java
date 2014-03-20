@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.apress.isf.java.service.DocumentService;
 import com.apress.isf.spring.data.DocumentDAO;
 
 /**
@@ -28,10 +29,14 @@ public class MyDocumentsTest {
 	@Autowired
 	DocumentDAO mongoDocumentDAO;
 	
+	@Autowired
+	DocumentService documentFacade;
+	
 	@Test
 	public void testMongoDB(){
 		log.debug("Testing Spring Data MongoDB...");
 		assertNotNull(mongoDocumentDAO);
+		assertNotNull(documentFacade);
 		
 	}
 	

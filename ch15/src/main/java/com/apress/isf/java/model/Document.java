@@ -5,18 +5,42 @@ package com.apress.isf.java.model;
 
 import java.util.Date;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+
 /**
  * @author Felipe Gutierrez
  *
  */
+@org.springframework.data.mongodb.core.mapping.Document(collection="mydocuments")
 public class Document {
+	@Id
 	private String documentId;
 	private String name;
+	@DBRef
 	private Type type;
 	private String location;
 	private String description;
 	private Date created;
 	private Date modified;
+	
+	public Document(){
+		Date now = new Date();
+		this.documentId = java.util.UUID.randomUUID().toString();
+		this.created = now;
+		this.modified = now;
+	}
+	
+	public Document(String name, String location, String description, Type type){
+		Date now = new Date();
+		this.documentId = java.util.UUID.randomUUID().toString();
+		this.name = name;
+		this.type = type;
+		this.location = location;
+		this.description = description;
+		this.created = now;
+		this.modified = now;
+	}
 	
 	public String getDocumentId() {
 		return documentId;
