@@ -6,7 +6,7 @@ package com.apress.isf.spring.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.apress.isf.java.model.Document;
 import com.apress.isf.java.model.Type;
@@ -17,7 +17,7 @@ import com.apress.isf.spring.data.DocumentDAO;
  * @author Felipe Gutierrez
  *
  */
-@Component("documentFacade")
+@Service("documentFacade")
 public class DocumetServiceFacade implements DocumentService {
 
 	@Autowired

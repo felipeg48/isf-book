@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
  * @author Felipe Gutierrez
  *
  */
-@org.springframework.data.mongodb.core.mapping.Document(collection="mydocuments")
+@org.springframework.data.mongodb.core.mapping.Document(collection="users")
 public class User {
 	@Id
 	private String userId;

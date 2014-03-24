@@ -11,7 +11,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.apress.isf.java.model.Document;
@@ -31,14 +30,14 @@ public class DocumentScheduler {
 	@Autowired
 	DocumentService documentService;
 	
-	@Scheduled(cron="*/3 * * * * ?")
+	//@Scheduled(cron="*/3 * * * * ?")
 	public void sampleCronMethod(){
 		log.debug("Running every 3 seconds...");
 	}
 	
 	private Type webType = new Type("WEB",".url");
 	
-	@Scheduled(cron="*/10 * * * * ?")
+	//@Scheduled(cron="*/10 * * * * ?")
 	public void urlCheck() throws IOException{
 		log.debug("@@ Checking valid WEB type Document's URL...");
 		URL url = null;

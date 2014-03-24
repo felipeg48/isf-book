@@ -9,7 +9,7 @@ import org.springframework.data.annotation.Id;
  * @author Felipe Gutierrez
  *
  */
-@org.springframework.data.mongodb.core.mapping.Document(collection="mydocuments")
+@org.springframework.data.mongodb.core.mapping.Document(collection="types")
 public class Type {
 	
 	@Id
@@ -19,18 +19,17 @@ public class Type {
 	private String extension;
 	
 	public Type(){
-		this.typeId = java.util.UUID.randomUUID().toString();
+		this(null,null);
 	}
 	
 	public Type(String name,String extension){
-		this.typeId = java.util.UUID.randomUUID().toString();
-		this.name = name;
-		this.extension = extension;
+		this(java.util.UUID.randomUUID().toString(), name, extension, null);
 	}
 	
-	public Type(String name,String extension, String description){
-		this.typeId = java.util.UUID.randomUUID().toString();
+	public Type(String id, String name,String extension, String description){
+		this.typeId = id;
 		this.name = name;
+		this.extension = extension;
 		this.desc = description;
 	}
 

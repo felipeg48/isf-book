@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
  * @author Felipe Gutierrez
  *
  */
-@org.springframework.data.mongodb.core.mapping.Document(collection="mydocuments")
+@org.springframework.data.mongodb.core.mapping.Document(collection="docs")
 public class Document {
 	@Id
 	private String documentId;
@@ -25,15 +25,17 @@ public class Document {
 	private Date modified;
 	
 	public Document(){
-		Date now = new Date();
-		this.documentId = java.util.UUID.randomUUID().toString();
-		this.created = now;
-		this.modified = now;
+		this(java.util.UUID.randomUUID().toString(),null);
 	}
-	
+	public Document(String documentId, String name){
+		this(documentId,name,null,null,null);
+	}
 	public Document(String name, String location, String description, Type type){
+		this(java.util.UUID.randomUUID().toString(),name,location,description,type);
+	}
+	public Document(String documentId, String name, String location, String description, Type type){
 		Date now = new Date();
-		this.documentId = java.util.UUID.randomUUID().toString();
+		this.documentId = documentId;
 		this.name = name;
 		this.type = type;
 		this.location = location;
@@ -108,6 +110,10 @@ public class Document {
 		builder.append(type);
 		builder.append(", location: ");
 		builder.append(location);
+		builder.append(", created: ");
+		builder.append(created);
+		builder.append(", modified: ");
+		builder.append(modified);
 		builder.append(")");
 		return builder.toString();
 	}

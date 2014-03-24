@@ -7,8 +7,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -22,10 +24,10 @@ import com.apress.isf.java.model.Document;
 @Repository("documentDAO")
 public class DocumentRepository implements DocumentDAO {
 
-	//@Autowired
+	@Autowired
 	private DataSource dataSource;
 
-	//@Resource
+	@Resource
 	private Map<String,String> sql;
 	
 	public List<Document> getAll() {
