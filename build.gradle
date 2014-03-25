@@ -14,7 +14,9 @@ allprojects {
 		jcenter()
         mavenCentral()
 		maven {
+			url "http://repo.spring.io/libs-snapshot"
 			url 'http://repo.spring.io/milestone'
+			url 'http://repo.spring.io/libs-release'
 		}
     }
 
@@ -107,5 +109,13 @@ project(':ch15'){
 	dependencies {
 		compile 'org.springframework.data:spring-data-mongodb:1.4.0.RELEASE'
             
+	}
+}
+
+project(':ch16'){
+	dependencies {
+		compile 'org.springframework.amqp:spring-rabbit:1.2.1.RELEASE'
+		compile 'org.springframework.data:spring-data-mongodb:1.4.0.RELEASE'
+		compile 'org.springframework.data:spring-data-redis:1.2.0.RELEASE	'
 	}
 }
