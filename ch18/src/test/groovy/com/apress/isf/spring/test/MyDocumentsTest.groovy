@@ -7,6 +7,7 @@ import static org.junit.Assert.assertNotNull
 import static org.junit.Assert.assertEquals
 
 import org.junit.Test
+import org.junit.Ignore
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.context.support.GenericGroovyApplicationContext
@@ -24,6 +25,7 @@ class MyDocumentsTest {
 	private final ctx = new GenericGroovyApplicationContext("classpath:META-INF/groovy/mydocuments.groovy")
 
 	@Test
+	@Ignore
 	void testJDBC(){
 		log.info "Testing JDBC..."
 		assertNotNull ctx
