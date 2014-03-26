@@ -23,7 +23,7 @@
 		compile 'org.springframework.boot:spring-boot-starter-web:1.0.0.RC3'
 		compile 'org.springframework:spring-webmvc:4.0.2.RELEASE'
 		compile 'org.springframework.data:spring-data-mongodb:1.4.0.RELEASE'
-		compile 'org.springframework.data:spring-data-redis:1.2.0.RELEASE	'
+		//compile 'org.springframework.data:spring-data-redis:1.2.0.RELEASE	'
 		compile 'org.springframework.amqp:spring-rabbit:1.2.1.RELEASE'
 		
 		runtime 'cglib:cglib:3.1'
