@@ -3,14 +3,10 @@
 
 @Configuration
 class MyDocuments  {
-	
+   //Extra configuration 	
 }
-
 
 beans {
 	importBeans("jdbc.xml")
 
 }
-
-
-
