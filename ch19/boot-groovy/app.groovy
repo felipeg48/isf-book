@@ -3,7 +3,7 @@
 
 @Configuration
 class MyDocuments  {
-
+	
 }
 
 
@@ -11,5 +11,6 @@ beans {
 	importBeans("jdbc.xml")
 
 }
+
 
 
