@@ -24,7 +24,7 @@ public class DocumentRowMapper implements RowMapper<Document> {
 		document.setLocation(rs.getString("location"));
 		document.setCreated(rs.getDate("created"));
 		document.setModified(rs.getDate("modified"));
-		document.setDescription("doc_desc");
+		document.setDescription(rs.getString("doc_desc"));
 		Type type = new Type();
 		type.setTypeId(rs.getString("typeId"));
 		type.setName(rs.getString("type_name"));
