@@ -11,20 +11,35 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
+//WAR: Enable the war plugin for creating a WAR file
+//apply plugin: 'war'
 apply plugin: 'spring-boot'
 
-jar {
-	baseName = 'ch19-spring-boot'
-	version =  '0.1.0'
-}
+
+// jar {
+// 	baseName = 'ch19-spring-boot'
+// 	version =  '0.1.0'
+// }
+
+//WAR: Enable the war section and comment the jar section out.
+//war {
+// 	baseName = 'ch19-spring-boot'
+// 	version =  '0.1.0'
+// }
+
 
 repositories {
 	mavenCentral()
 	maven { url "http://repo.spring.io/libs-snapshot" }
 }
 
+//WAR: Enable this section for a WAR creation
+//configurations {
+//    providedRuntime
+//}
+
 dependencies {
-	
+
 	compile("org.springframework.boot:spring-boot-starter-web") {
 		exclude module: "spring-boot-starter-tomcat"
 	}
