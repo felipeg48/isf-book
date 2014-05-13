@@ -1,10 +1,13 @@
 buildscript {
 	repositories {
-		maven { url "http://repo.spring.io/libs-snapshot" }
+		maven {
+		    url "http://repo.spring.io/libs-snapshot"
+		    url "http://repo.spring.io/libs-release"
+		}
 		mavenLocal()
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.0.0.RC5")
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.0.0.RELEASE")
 	}
 }
 
@@ -45,7 +48,7 @@ dependencies {
 	}
 	compile("org.springframework.boot:spring-boot-starter-jetty")
 	compile("org.springframework.boot:spring-boot-starter-actuator")
-	compile("org.springframework.boot:spring-boot-starter-jdbc:1.0.0.RC5")
+	compile("org.springframework.boot:spring-boot-starter-jdbc")
 
 	runtime 'hsqldb:hsqldb:1.8.0.10'
 	testCompile("junit:junit")
