@@ -24,7 +24,7 @@
 		compile 'org.springframework:spring-webmvc:4.0.4.RELEASE'
 		compile 'org.springframework.data:spring-data-mongodb:1.4.2.RELEASE'
 		//compile 'org.springframework.data:spring-data-redis:1.2.1.RELEASE	'
-		compile 'org.springframework.amqp:spring-rabbit:1.3.2.RELEASE'
+		compile 'org.springframework.amqp:spring-rabbit:1.3.3.RELEASE'
 		compile 'org.springframework.social:spring-social-twitter:1.1.0.RELEASE'
 
 
