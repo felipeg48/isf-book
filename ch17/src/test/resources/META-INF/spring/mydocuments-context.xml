@@ -15,8 +15,8 @@
   <context:property-placeholder location="twitter.properties" />
   
   <bean id="tweet" class="org.springframework.social.twitter.api.impl.TwitterTemplate">
-      <constructor-arg name="consumerKey" value="${twitter.consumerKey}"/>
-      <constructor-arg name="consumerSecret" value="${twitter.consumerSecret}"/>
+      <constructor-arg name="consumerKey" value="${twitter.apiKey}"/>
+      <constructor-arg name="consumerSecret" value="${twitter.apiSecret}"/>
       <constructor-arg name="accessToken" value="${twitter.accessToken}"/>
       <constructor-arg name="accessTokenSecret" value="${twitter.accessTokenSecret}"/>
   </bean>
