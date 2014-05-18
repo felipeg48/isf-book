@@ -1,10 +1,19 @@
 /* Uncomment if this project CH12 need to be compile alone
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath (group: 'com.sahlbach.gradle', name: 'gradle-jetty-eclipse-plugin', version: '1.9.+')
+    }
+}
+ 
  apply plugin: 'java'
  apply plugin: 'groovy'
  apply plugin: 'eclipse'
  apply plugin: 'idea'
  apply plugin: 'war'
- apply plugin: 'jetty'
+ apply plugin: 'jettyEclipse'
 
  group = 'com.apress.isf'
  version = '1.0'
