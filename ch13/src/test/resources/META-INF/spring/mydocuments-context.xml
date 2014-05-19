@@ -13,7 +13,7 @@
   <context:property-placeholder location="email.properties" />
   
 	<!-- EMAIL -->
-	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	<bean id="email" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="${email.host}" />
 		<property name="port" value="${email.port}" />
 		<property name="username" value="${email.username}" />
