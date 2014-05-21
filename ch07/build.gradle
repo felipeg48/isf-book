@@ -13,10 +13,10 @@
 
  dependencies {
 	 compile 'org.codehaus.groovy:groovy-all:2.3.0'
-	 compile 'org.springframework:spring-context:4.0.4.RELEASE'
+	 compile 'org.springframework:spring-context:4.0.5.RELEASE'
 
 	 testCompile 'junit:junit:4.11'
-	 testCompile 'org.springframework:spring-test:4.0.4.RELEASE'
+	 testCompile 'org.springframework:spring-test:4.0.5.RELEASE'
 
  }
 
