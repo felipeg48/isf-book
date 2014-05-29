@@ -1,13 +1,15 @@
+/*
 buildscript {
 	repositories {
 		maven {
-		    url "http://repo.spring.io/libs-snapshot"
-		    url "http://repo.spring.io/libs-release"
+			url "http://repo.spring.io/libs-snapshot"
+			url 'http://repo.spring.io/milestone'
+			url 'http://repo.spring.io/libs-release'
 		}
 		mavenLocal()
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.0.0.RELEASE")
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.0.2.RELEASE")
 	}
 }
 
@@ -53,3 +55,5 @@ dependencies {
 	runtime 'hsqldb:hsqldb:1.8.0.10'
 	testCompile("junit:junit")
 }
+
+*/
