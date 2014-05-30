@@ -11,6 +11,16 @@ xd:> stream create --name docs-pdf --definition "rabbit | log"
 xd:> stream create --name pdftap --definition "tap:stream:docs-pdf > counter --name=pdfcount"
 
 
+### XML Document Example - this can be send to the Spring XD through RabbitMq Web Console
+<document>
+	<documentid>94f68193-89a7-4834-a1e3-76768e9a5ddf</documentid>
+	<name>Spring XD</name>
+	<type>
+		<typeid>41e2d211-6396-4f23-9690-77bc2820d84b</typeid>
+		<name>PDF</name>
+		<extension>.pdf</pdf>
+	</type>
+</document>
 
 
 ### URLS for Metrics:
