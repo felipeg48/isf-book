@@ -7,7 +7,7 @@ buildscript {
         classpath (group: 'com.sahlbach.gradle', name: 'gradle-jetty-eclipse-plugin', version: '1.9.+')
     }
 }
- 
+
  apply plugin: 'java'
  apply plugin: 'groovy'
  apply plugin: 'eclipse'
@@ -27,7 +27,7 @@ buildscript {
 		compile 'org.aspectj:aspectjrt:1.7.4'
 		compile 'org.springframework:spring-context:4.0.5.RELEASE'
 		compile 'org.springframework:spring-jdbc:4.0.5.RELEASE'
-		compile 'org.springframework.boot:spring-boot-starter-web:1.0.2.RELEASE'
+		compile 'org.springframework.boot:spring-boot-starter-web:1.1.1.RELEASE'
 		compile 'org.springframework:spring-webmvc:4.0.5.RELEASE'
 		compile 'com.thoughtworks.xstream:xstream:1.4.7'
 

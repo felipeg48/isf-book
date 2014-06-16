@@ -5,3 +5,5 @@ ch*/.springBeans
 ch*/.gradle/*
 ch*/bin/*
 ch*/build/*
+.git*
+.gitignore
